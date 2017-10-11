@@ -139,3 +139,66 @@ footer p{
     background-color: #edf1f2;
     margin-top: 20px;
 }
+
+/*========registration form=========*/
+.registration {
+    background:linear-gradient(45deg, #a177ff, #02ceff);
+    min-height: 100vh;
+    display:flex;
+    justify-content:center;
+    top:0;
+}
+
+.registration img{
+    height: 40px;
+    width: auto;
+    margin-top:19px;
+    padding-left:230px;
+}
+
+.registration h1{
+    color:white;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.contant-row{
+    margin-top:35px;
+}
+
+.form-reg{
+    align-self: center;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 45px 90px;
+    width: 560px;
+}
+
+.form-reg h4{
+    color: #32c1ff;
+    font-family: "haptik","Helvetica Neue",Arial,sans-serif;
+    font-size: 40px;
+    text-align:center;
+    line-height: 45px;
+}
+
+.form-reg .form-control{
+    height: 40px;
+}
+
+.form-reg img{
+    height: 400px;
+    width: auto;
+    margin-left: -10px;
+    margin-top: -40px;
+    padding-left:0;
+}
+
+.form-reg .btn-default {
+    background-color: #edf1f2;
+    margin-left: 28px;
+    margin-top: 20px;
+}
