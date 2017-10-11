@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventPlanning.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,12 @@ namespace EventPlanning.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult NotCorrectLogin(LoginViewModel model)
+        {
+            ModelState.AddModelError("", "Имя или пароль некорректны");
+            return View(model);
         }
     }
 }

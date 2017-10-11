@@ -70,7 +70,7 @@ namespace EventPlanning.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return RedirectToAction("NotCorrectLogin", "Home");
             }
 
             // This doesn't count login failures towards account lockout
@@ -86,8 +86,7 @@ namespace EventPlanning.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                    return RedirectToAction("NotCorrectLogin", "Home", model);
             }
         }
 
