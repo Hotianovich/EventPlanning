@@ -78,3 +78,64 @@ outline: 0;
 footer p{
     text-align:center;
 }
+
+/*===============Login==================*/
+.modal-open .modal-dialog{
+    width:450px;
+}
+
+.modal-header h4 {
+    padding-left: 75px;
+    color: #151b26;
+    font-family: "haptik","Helvetica Neue",Arial,sans-serif;
+    font-size: 28px;
+    font-weight:500;
+}
+
+.form-horizontal .btn-default{
+    background-color: #edf1f2;
+}
+
+/*================Login in===============*/
+.form-login{
+    align-self: center;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 0 90px;
+    padding-top:35px;
+    width: 560px;
+
+}
+
+.form-login h4{
+    color: #151b26;
+    font-family: "haptik","Helvetica Neue",Arial,sans-serif;
+    font-size: 40px;
+    text-align:center;
+    line-height: 45px;
+    margin-top:0;
+}
+
+.form-login .form-control{
+    height: 40px;
+}
+
+.form-login .form-group label{
+    padding-left:0;
+}
+
+.form-login img{
+    height: 400px;
+    width: auto;
+    margin-left: -25px;
+    margin-top: -40px;
+    padding-left:0;
+}
+
+.form-login .btn-default {
+    background-color: #edf1f2;
+    margin-top: 20px;
+}

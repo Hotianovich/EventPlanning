@@ -55,7 +55,7 @@ namespace EventPlanning.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]

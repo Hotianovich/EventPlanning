@@ -19,6 +19,10 @@
             </div>
         </div>
     </div>
+    @* Modal window *@
+    <div id="modDialog" class="modal fade">
+        <div id="dialogContent" class="modal-dialog"></div>
+    </div>
 
     @RenderBody()
     <hr />
@@ -29,6 +33,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/myscripts")
     @RenderSection("scripts", required: false)
 </body>
 </html>
