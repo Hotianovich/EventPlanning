@@ -16,7 +16,6 @@ namespace EventPlanning.Controllers
 
         public ActionResult NotCorrectLogin(LoginViewModel model)
         {
-            ModelState.AddModelError("", "Имя или пароль некорректны");
             return View(model);
         }
     }

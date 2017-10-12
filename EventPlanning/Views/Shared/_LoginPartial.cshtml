@@ -6,6 +6,7 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
+        
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>
     </ul>
     }
@@ -13,6 +14,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Кабинет", "Index", "Admin")</li>
         <li>@Html.ActionLink("Регистрация", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Войти", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
