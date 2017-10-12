@@ -3,13 +3,21 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
+using EventPlanning.Models.EntitiesModel;
 
 namespace EventPlanning.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public ICollection<RegForEvent> RegForEvents { get; set; }
         public string NickName { get; set; }
+
+        public ApplicationUser()
+        {
+            RegForEvents = new List<RegForEvent>();
+        }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             
@@ -21,6 +29,8 @@ namespace EventPlanning.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Event> Events { get; set; }
+        public DbSet<RegForEvent> RegForEvents { get; set; }
         public ApplicationDbContext()
             : base("EventPlanningDB", throwIfV1Schema: false)
         {
