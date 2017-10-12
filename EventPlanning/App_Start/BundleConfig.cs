@@ -27,6 +27,12 @@ namespace EventPlanning
 
             bundles.Add(new ScriptBundle("~/bundles/myscripts").Include(
                         "~/Scripts/SiteScripts.js"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+                       "~/Content/themes/base/all.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                       "~/Scripts/jquery-ui-{version}.js"));
         }
     }
 }

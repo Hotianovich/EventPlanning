@@ -1,18 +1,76 @@
-﻿
+﻿@model EventPlanning.Models.EntitiesModel.Event
+
 @{
-    Layout = null;
+    ViewBag.Title = "Кабинет админа";
 }
 
-<!DOCTYPE html>
+<div class="back">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="~/Content/Images/wallerbackground.png" class="man" />
+            </div>
+            <div class="col-md-8">
+             
+                   
+           
+                <h1>Добавте мероприятие</h1>
+                <div class="form-event">
+                    @using (Ajax.BeginForm("AddEvent", null, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "results" }, new { @role = "form", @id = "myForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NameEvent, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.NameEvent, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.NameEvent, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Topic, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.Topic, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Topic, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Locations, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.Locations, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Locations, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <div class="calendar-event">
+                                @Html.LabelFor(m => m.DateEvent, new { @class = "control-label" })
+                                @*@Html.Editor("date", new { htmlAttributes = new { @class = "text-editor-calendar", @placeholder = "гггг/мм/дд" } })*@
+                                @Html.EditorFor(m => m.DateEvent, new { htmlAttributes = new { @class = "text-editor-calendar", @placeholder = "гггг/мм/дд" } })
+                                @Html.ValidationMessageFor(m => m.DateEvent, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.TimeEvent, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.TimeEvent, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.TimeEvent, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NamderOfParticipants, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.NamderOfParticipants, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.NamderOfParticipants, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btn-default" value="Зарегистрироваться" />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="row">
+                    <div class="col-lg-offset-1 col-md-10">
+                        <div id="results">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        <h1>Hello</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+
+
