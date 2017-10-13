@@ -1,44 +1,36 @@
 ﻿@model EventPlanning.Models.RegisterViewModel
+
 @{
-    Layout = null;
+    ViewBag.Title = "Регистрация";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Регистрация</title>
-    @Styles.Render("~/Content/css")
-</head>
-<body>
-    <section class="registration">
-        <div class="container">
-            <div class="row">
-                <div class="contant-row">
-                    <div class="col-md-offset-3 col-md-8">
-                        <h1>Event Planning</h1>
-                    </div>
+<section class="registration">
+    <div class="container">
+        <div class="row">
+            <div class="contant-row">
+                <div class="col-md-offset-3 col-md-8">
+                    <h1>Event Planning</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-offset-3 col-md-8">
-                    <div class="form-reg">
-                        <h4>Создать новую учетную запись</h4>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="~/Content/Images/Registration_Img.png" alt="" />
-                            </div>
-                            <div class="col-md-8">
-                                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @role = "form" }))
-                                {
-                                    @Html.AntiForgeryToken()
-                                    @Html.ValidationSummary("", new { @class = "text-danger" })
-                                    <div class="form-group">
-                                        @Html.LabelFor(m => m.NickName, new { @class = "control-label" })
-                                        @Html.TextBoxFor(m => m.NickName, new { @class = "form-control" })
-                                    </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-8">
+                <div class="form-reg">
+                    <h4>Создать новую учетную запись</h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Content/Images/Registration_Img.png" alt="" />
+                        </div>
+                        <div class="col-md-8">
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.NickName, new { @class = "control-label" })
+                                    @Html.TextBoxFor(m => m.NickName, new { @class = "form-control" })
+                                </div>
                                     <div class="form-group">
                                         @Html.LabelFor(m => m.Email, new { @class = "control-label" })
                                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
@@ -59,15 +51,14 @@
                                             <input type="submit" class="btn btn-default" value="Зарегистрироваться" />
                                         </div>
                                     </div>
-                                }
-                            </div>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-</body>
-</html>
+    </div>
+</section>
+
+
+

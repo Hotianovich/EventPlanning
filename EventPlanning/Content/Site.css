@@ -81,7 +81,7 @@ footer p {
 /*========registration form=========*/
 .registration {
     background: linear-gradient(45deg, #a177ff, #02ceff);
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     top: 0;
@@ -98,6 +98,7 @@ footer p {
     color: white;
     font-size: 36px;
     font-weight: 600;
+    margin-top: 50px
 }
 
 .contant-row {
@@ -113,6 +114,7 @@ footer p {
     flex-shrink: 0;
     padding: 45px 90px;
     width: 560px;
+    margin-bottom:70px;
 }
 
 .form-reg h4 {
