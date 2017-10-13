@@ -35,25 +35,17 @@
                         <div class="form-group">
                             <div class="calendar-event">
                                 @Html.LabelFor(m => m.DateEvent, new { @class = "control-label" })
-                                @*@Html.EditorFor(m => m.DateEvent, new { htmlAttributes = new { @class = "form-control", @placeholder = "гггг/мм/дд" } })*@
                                 @Html.TextBoxFor(m => m.DateEvent, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.DateEvent, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(m => m.TimeEvent, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.TimeEvent, new { @class = "form-control input-group date" })
-                            @Html.ValidationMessageFor(m => m.TimeEvent, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
                             @Html.LabelFor(m => m.NamderOfParticipants, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.NamderOfParticipants, new { @class = "form-control" })
+                            @Html.EditorFor(m => m.NamderOfParticipants, new { htmlAttributes = new { @class = "text-editor-calendar"} })
                             @Html.ValidationMessageFor(m => m.NamderOfParticipants, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" class="btn btn-default" value="Зарегистрироваться" />
-                            </div>
+                            <input type="submit" class="btn btn-default" value="Добавить" />
                         </div>
                     }
                 </div>
@@ -76,7 +68,7 @@
 <script type="text/javascript">
     $(function () {
         $('#DateEvent').datetimepicker({
-            format: "YYYY/MM/DD hh:mm"
+            format: "YYYY/MM/DD HH:mm"
         });
     });
 </script>

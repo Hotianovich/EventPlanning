@@ -13,28 +13,26 @@ namespace EventPlanning.Models.EntitiesModel
         public int EventId { get; set; }
 
         [MaxLength(100)]
+        [Display(Name = "Название события")]
         [Required(ErrorMessage = "Введите название события")]
         public string NameEvent { get; set; }
 
         [MaxLength(50)]
+        [Display(Name = "Тема события")]
         [Required(ErrorMessage = "Введите название темы")]
         public string Topic { get; set; }
 
         [MaxLength(50)]
+        [Display(Name = "Местоположение")]
         [Required(ErrorMessage = "Введите местоположение")]
         public string Locations { get; set; }
 
         [Required(ErrorMessage = "Введите дату начала")]
-        [DataType(DataType.Date)]
-        //[Remote("ValidateDate", "Tasks")]
+        [Display(Name = "Введите дату и время начала события")]
         public DateTime DateEvent { get; set; }
 
-        [Required(ErrorMessage = "Введите время начала")]
-        [DataType(DataType.Time)]
-        [DisplayFormat(DataFormatString = "{HH:mm}", ApplyFormatInEditMode = true)]
-        public DateTime TimeEvent { get; set; }
-
         [Required(ErrorMessage = "Введите количество участников")]
+        [Display(Name = "Число участников")]
         public int NamderOfParticipants { get; set; }
 
         public ICollection<RegForEvent> RegForEvents { get; set; }
