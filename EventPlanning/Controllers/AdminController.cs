@@ -9,14 +9,18 @@ namespace EventPlanning.Controllers
     [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
-        
+        // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
 
-        
-        
+        // GET: Admin/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
         // GET: Admin/Create
         public ActionResult Create()
         {

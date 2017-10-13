@@ -12,9 +12,6 @@ namespace EventPlanning.App_Start
     using Ninject.Web.Common;
     using Services;
     using System.Web.Mvc;
-    using Interfaces;
-    using Models.EntitiesModel;
-    using Repositories;
 
     public static class NinjectWebCommon 
     {
@@ -49,7 +46,6 @@ namespace EventPlanning.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                kernel.Bind<IRepository<Event>>().To<EventRepository>();
 
                 RegisterServices(kernel);
                 return kernel;
