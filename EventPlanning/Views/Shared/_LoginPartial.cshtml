@@ -9,6 +9,7 @@
             @Html.AntiForgeryToken()
 
             <ul class="nav navbar-nav navbar-right">
+                <li>@Html.Action("GetName", "Home")</li>
                 <li>@Html.ActionLink("Создать мероприятие", "Index", "Admin")</li>
                 <li><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>
             </ul>
@@ -21,6 +22,7 @@
             @Html.AntiForgeryToken()
 
             <ul class="nav navbar-nav navbar-right">
+                <li>@Html.Action("GetName", "Home")</li>
                 <li><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>
             </ul>
         }

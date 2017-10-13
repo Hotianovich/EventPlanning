@@ -49,6 +49,13 @@ a:link, a:visited, a:hover, a:focus, a:active {
     font-size: 16px;
 }
 
+.my{
+    color: #b200ff;
+    margin-top:15px;
+    margin-right:10px;
+    font-weight: 700;
+}
+
 /*=======section1 Page-title================--*/
 .page-title {
     position: relative;

@@ -18,5 +18,14 @@ namespace EventPlanning.Controllers
         {
             return View(model);
         }
+
+        public PartialViewResult GetName()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            var n = context.Users.Where(u => u.Email.Equals(User.Identity.Name));
+            var name = n.FirstOrDefault();
+            ViewBag.Name = name.NickName;
+            return PartialView();
+        }
     }
 }
