@@ -33,5 +33,41 @@ namespace EventPlanning.Controllers
             }
             return View(model);
         }
+
+        public JsonResult ValidateDate(string DateEvent)
+        {
+            DateTime parsedDate;
+
+            if (DateTime.TryParse(DateEvent, out parsedDate))
+            {
+                if (DateTime.Now > parsedDate)
+                {
+                    return Json("Старая дата", JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json("Ошибка", JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ValidateNamberOfParticipants(string NamderOfParticipants)
+        {
+            int parsedInt;
+
+            if (Int32.TryParse(NamderOfParticipants, out parsedInt))
+            {
+                if (parsedInt < 0)
+                {
+                    return Json("Отрицательное число", JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json("Ошибка", JsonRequestBehavior.AllowGet);
+        }
     }
 }

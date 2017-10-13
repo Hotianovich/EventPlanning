@@ -29,10 +29,12 @@ namespace EventPlanning.Models.EntitiesModel
 
         [Required(ErrorMessage = "Введите дату начала")]
         [Display(Name = "Введите дату и время начала события")]
+        [Remote("ValidateDate", "Admin")]
         public DateTime DateEvent { get; set; }
 
         [Required(ErrorMessage = "Введите количество участников")]
         [Display(Name = "Число участников")]
+        [Remote("ValidateNamberOfParticipants", "Admin")]
         public int NamderOfParticipants { get; set; }
 
         public ICollection<RegForEvent> RegForEvents { get; set; }
