@@ -50,9 +50,5 @@ namespace EventPlanning.Models.EntitiesModel
         {
             RegForEvents = new List<RegForEvent>();
         }
-
-        public int Age { get; set; }
-
-
     }
 }
