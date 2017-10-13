@@ -392,6 +392,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\NotCorrectLogin.cshtml" />
     <Content Include="Views\Home\GetName.cshtml" />
+    <Content Include="Views\Admin\AddEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

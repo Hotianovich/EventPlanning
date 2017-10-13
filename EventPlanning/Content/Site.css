@@ -250,3 +250,10 @@ footer p {
     background: linear-gradient(45deg, #a177ff, #02ceff);   
     color:#fff;
 }
+
+#results{
+     color: #fff;
+     margin-bottom:20px;
+     margin-top:-20px;
+     font-size:20px;
+}
