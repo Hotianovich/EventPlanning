@@ -35,13 +35,14 @@
                         <div class="form-group">
                             <div class="calendar-event">
                                 @Html.LabelFor(m => m.DateEvent, new { @class = "control-label" })
-                                @Html.EditorFor(m => m.DateEvent, new { htmlAttributes = new { @class = "text-editor-calendar", @placeholder = "гггг/мм/дд" } })
+                                @*@Html.EditorFor(m => m.DateEvent, new { htmlAttributes = new { @class = "form-control", @placeholder = "гггг/мм/дд" } })*@
+                                @Html.TextBoxFor(m => m.DateEvent, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.DateEvent, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.TimeEvent, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.TimeEvent, new { @class = "form-control" })
+                            @Html.TextBoxFor(m => m.TimeEvent, new { @class = "form-control input-group date" })
                             @Html.ValidationMessageFor(m => m.TimeEvent, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
@@ -68,3 +69,14 @@
     </div>
 </div>
 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#DateEvent').datetimepicker({
+            format: "YYYY/MM/DD hh:mm"
+        });
+    });
+</script>

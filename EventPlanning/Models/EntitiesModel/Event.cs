@@ -26,8 +26,7 @@ namespace EventPlanning.Models.EntitiesModel
 
         [Required(ErrorMessage = "Введите дату начала")]
         [DataType(DataType.Date)]
-        [Remote("ValidateDate", "Tasks")]
-        [DisplayFormat(DataFormatString = "{0:yyyy'/'MM'/'dd}", ApplyFormatInEditMode = true)]
+        //[Remote("ValidateDate", "Tasks")]
         public DateTime DateEvent { get; set; }
 
         [Required(ErrorMessage = "Введите время начала")]
