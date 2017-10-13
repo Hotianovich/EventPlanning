@@ -1,50 +1,41 @@
 ﻿@model EventPlanning.Models.LoginViewModel
 
 @{
-    Layout = null;
+    ViewBag.Title = "Авторизация";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Некорректный логин или пароль</title>
-    @Styles.Render("~/Content/css")
-</head>
-<body>
-    <section class="registration">
-        <div class="container">
-            <div class="row">
-                <div class="contant-row">
-                    <div class="col-md-offset-3 col-md-8">
-                        <h1>Event Planning</h1>
-                    </div>
+<section class="registration">
+    <div class="container">
+        <div class="row">
+            <div class="contant-row">
+                <div class="col-md-offset-3 col-md-8">
+                    <h1>Event Planning</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-offset-3 col-md-8">
-                    <div class="form-login">
-                        <h4>Авторизация</h4>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="login-img">
-                                    <img src="~/Content/Images/Registration_Img.png" alt="" />
-                                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-8">
+                <div class="form-login">
+                    <h4>Авторизация</h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="login-img">
+                                <img src="~/Content/Images/Registration_Img.png" alt="" />
                             </div>
-                            <div class="col-md-8">
-                                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                {
-                                    @Html.AntiForgeryToken()
+                        </div>
+                        <div class="col-md-8">
+                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
 
-                                    <div class="form-group">
-                                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                                        <div class="col-md-10">
-                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                        </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                     </div>
+                                </div>
                                     <div class="form-group">
                                         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
                                         <div class="col-md-10">
@@ -57,15 +48,12 @@
                                             <input type="submit" value="Войти" class="btn btn-default" />
                                         </div>
                                     </div>
-                                }
-                            </div>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-</body>
-</html>
+    </div>
+</section>
+
