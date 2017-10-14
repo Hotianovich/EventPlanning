@@ -346,6 +346,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -394,8 +396,8 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\NotCorrectLogin.cshtml" />
     <Content Include="Views\Home\GetName.cshtml" />
-    <Content Include="Views\Admin\AddEvent.cshtml" />
     <Content Include="Views\Home\GetEvent.cshtml" />
+    <Content Include="Views\Admin\AddEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

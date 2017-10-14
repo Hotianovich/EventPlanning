@@ -30,3 +30,8 @@ function checkEmail(){
         $('#send').attr('disabled', 'disabled');
     }
 }
+/*==================================Clear form ========================*/
+
+function ResetView() {
+    $('#myForm').trigger('reset');
+}

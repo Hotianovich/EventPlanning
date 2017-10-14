@@ -1,75 +1,63 @@
 ﻿@model EventPlanning.Models.EntitiesModel.Event
 
-@{
-    ViewBag.Title = "Кабинет админа";
-    var v = ViewBag.AddEvent ?? "";
-}
 
-<div class="back">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="~/Content/Images/wallerbackground.png" class="man" />
-            </div>
-            <div class="col-md-8">
-                <h1>Добавте мероприятие</h1>
-                <div class="form-event">
-                    @using (Ajax.BeginForm("AddEvent", new { ReturnUrl = ViewBag.ReturnUrl }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "results" }, new { @role = "form", @id = "myForm" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.NameEvent, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.NameEvent, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.NameEvent, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Topic, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.Topic, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Topic, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Locations, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.Locations, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Locations, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <div class="calendar-event">
-                                @Html.LabelFor(m => m.DateEvent, new { @class = "control-label" })
-                                @Html.TextBoxFor(m => m.DateEvent, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(m => m.DateEvent, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.NamderOfParticipants, new { @class = "control-label" })
-                            @Html.EditorFor(m => m.NamderOfParticipants, new { htmlAttributes = new { @class = "text-editor-calendar" } })
-                            @Html.ValidationMessageFor(m => m.NamderOfParticipants, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-default" value="Добавить" />
-                        </div>
-                    }
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-offset-2 col-md-8">
+            <div class="event-two">
+                <div class="name-event">
+                    @Model.NameEvent
                 </div>
-                
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="nav nav-pills my-ul">
+                            <li>Тема:</li>
+                            <li class="my-pull">
+                                @Model.Topic
+                            </li>
+                        </ul>
+
+                        <ul class="nav nav-pills my-ul">
+                            <li>Адресс:</li>
+                            <li class="my-pull">
+                                @Model.Locations
+                            </li>
+                        </ul>
+
+                        <ul class="nav nav-pills my-ul">
+                            <li>Начало:</li>
+                            <li class="my-pull">
+                                @{
+                                    DateTime dt = (DateTime)Model.DateEvent;
+                                    string date = String.Format($"{dt.ToString("dd-MM-yyyy")} в {dt.ToString("HH:mm")}");
+                                }
+                                @Html.Label(date)
+                            </li>
+                        </ul>
+
+                        <ul class="nav nav-pills my-ul">
+                            <li>Количество участников:</li>
+                            <li class="my-pull">
+                                @Model.NamderOfParticipants
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="seats">
+                            <ul class="nav nav-stacked">
+                                <li class="text-center">Осталось мест</li>
+                                <li class="text-center">@Model.NamderOfParticipants</li>
+                            </ul>
+                        </div>
+                        <div class="my-btn">
+                            <button class="btn save-t" type="button" onclick="location.href='@Url.Action("Reg", "Home")'">Зарегистрироваться</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-offset-2 col-md-10">
-                <div id="results">
-                    @v
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
-<script type="text/javascript">
-    $(function () {
-        $('#DateEvent').datetimepicker({
-            format: "YYYY/MM/DD HH:mm"
-        });
-    });
-</script>

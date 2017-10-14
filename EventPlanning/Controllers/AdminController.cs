@@ -16,7 +16,7 @@ namespace EventPlanning.Controllers
         {
             _repoEvent = repoEvent;
         }
-        public ActionResult AddEvent()
+        public ActionResult Index()
         {
             return View();
         }
@@ -27,11 +27,10 @@ namespace EventPlanning.Controllers
             if (ModelState.IsValid)
             {
                 _repoEvent.Create(model);
-                ViewBag.AddEvent = "Событие добавлено!!! Перейдите на главную страницу";
                 ModelState.Clear();
-                return View();
+                return PartialView(model);
             }
-            return View(model);
+            return RedirectToAction("Index");
         }
 
         public JsonResult ValidateDate(string DateEvent)
@@ -51,7 +50,5 @@ namespace EventPlanning.Controllers
             }
             return Json("Ошибка", JsonRequestBehavior.AllowGet);
         }
-
-        
     }
 }

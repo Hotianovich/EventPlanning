@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <h1>Добавте мероприятие</h1>
                 <div class="form-event">
-                    @using (Ajax.BeginForm("AddEvent", null, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "results" }, new { @role = "form", @id = "myForm" }))
+                    @using (Ajax.BeginForm("AddEvent", null, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "results", OnSuccess = "ResetView" }, new { @role = "form", @id = "myForm" }))
                     {
                         @Html.AntiForgeryToken()
                         @Html.ValidationSummary("", new { @class = "text-danger" })
@@ -49,13 +49,17 @@
                         </div>
                     }
                 </div>
-                <div class="row">
-                    <div class="col-lg-offset-1 col-md-10">
-                        <div id="results">
+                
+            </div>
+        </div>
+    </div>
+</div>
 
-                        </div>
-                    </div>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="results">
+
             </div>
         </div>
     </div>
