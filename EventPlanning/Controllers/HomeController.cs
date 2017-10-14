@@ -1,4 +1,6 @@
-﻿using EventPlanning.Models;
+﻿using EventPlanning.Interfaces;
+using EventPlanning.Models;
+using EventPlanning.Models.EntitiesModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,11 @@ namespace EventPlanning.Controllers
 {
     public class HomeController : Controller
     {
+        private IRepository<Event> _repoEvent;
+        public HomeController(IRepository<Event> repoEvent)
+        {
+            _repoEvent = repoEvent;
+        }
         public ActionResult Index()
         {
             return View();
@@ -26,6 +33,12 @@ namespace EventPlanning.Controllers
             var name = n.FirstOrDefault();
             ViewBag.Name = name.NickName;
             return PartialView();
+        }
+
+        public PartialViewResult GetEvent()
+        {
+            var all = _repoEvent.GetAll();
+            return PartialView(all);
         }
     }
 }

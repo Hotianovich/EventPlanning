@@ -393,6 +393,7 @@
     <Content Include="Views\Home\NotCorrectLogin.cshtml" />
     <Content Include="Views\Home\GetName.cshtml" />
     <Content Include="Views\Admin\AddEvent.cshtml" />
+    <Content Include="Views\Home\GetEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

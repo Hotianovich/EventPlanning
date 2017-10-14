@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EventPlanning.Models.EntitiesModel.Event>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-offset-2 col-md-8">
+                <div class="event">
+                    <div class="name-event">
+                        @item.NameEvent
+                    </div>
+                    <div>
+                        <ul class="nav nav-pills my-ul">
+                            <li>Тема:</li>
+                            <li class="my-pull">@item.Topic</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="nav nav-pills my-ul">
+                            <li>Адресс:</li>
+                            <li class="my-pull">@item.Locations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
