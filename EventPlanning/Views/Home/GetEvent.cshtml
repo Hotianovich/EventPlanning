@@ -1,29 +1,70 @@
 ﻿@model IEnumerable<EventPlanning.Models.EntitiesModel.Event>
 
+@{
+    string str;
+}
 
 <div class="container">
     <div class="row">
-        @foreach (var item in Model)
+        @for (int i = 0; i < Model.Count(); i++)
         {
+            if (i % 2 == 0)
+            {
+                str = "event";
+            }
+            else
+            {
+                str = "event-two";
+            }
             <div class="col-md-offset-2 col-md-8">
-                <div class="event">
+                <div class=@str>
                     <div class="name-event">
-                        @item.NameEvent
+                        @Model.ElementAt(i).NameEvent
                     </div>
-                    <div>
-                        <ul class="nav nav-pills my-ul">
-                            <li>Тема:</li>
-                            <li class="my-pull">@item.Topic</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="nav nav-pills my-ul">
-                            <li>Адресс:</li>
-                            <li class="my-pull">@item.Locations</li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <ul class="nav nav-pills my-ul">
+                                <li>Тема:</li>
+                                <li class="my-pull">
+                                    @Model.ElementAt(i).Topic
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-pills my-ul">
+                                <li>Адресс:</li>
+                                <li class="my-pull">
+                                    @Model.ElementAt(i).Locations
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-pills my-ul">
+                                <li>Начало:</li>
+                                <li class="my-pull">
+                                    @{
+                                        DateTime dt = (DateTime)Model.ElementAt(i).DateEvent;
+                                        string date = String.Format($"{dt.ToString("dd-MM-yyyy")} в {dt.ToString("HH:mm")}");
+                                    }
+                                    @Html.Label(date)
+                                </li>
+                            </ul>
+
+                            <ul class="nav nav-pills my-ul">
+                                <li>Количество участников:</li>
+                                <li class="my-pull">
+                                    @Model.ElementAt(i).NamderOfParticipants
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="seats">
+                                
+                                ccxvx
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         }
+
     </div>
 </div>

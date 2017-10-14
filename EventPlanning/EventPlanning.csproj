@@ -239,6 +239,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Images\background1.png" />
+    <Content Include="Content\Images\background2.png" />
     <Content Include="Content\Images\Registration_Img.png" />
     <Content Include="Content\Images\SectionPageTatleImg.png" />
     <Content Include="Content\Images\wallerbackground.png" />
