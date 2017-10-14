@@ -34,7 +34,7 @@ namespace EventPlanning.Models.EntitiesModel
 
         [Required(ErrorMessage = "Введите количество участников")]
         [Display(Name = "Число участников")]
-        [Remote("ValidateNamberOfParticipants", "Admin")]
+        [Range(0, 1000000, ErrorMessage = "Введите положительное число")]
         public int NamderOfParticipants { get; set; }
 
         public ICollection<RegForEvent> RegForEvents { get; set; }

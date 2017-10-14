@@ -52,22 +52,6 @@ namespace EventPlanning.Controllers
             return Json("Ошибка", JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult ValidateNamberOfParticipants(string NamderOfParticipants)
-        {
-            int parsedInt;
-
-            if (Int32.TryParse(NamderOfParticipants, out parsedInt))
-            {
-                if (parsedInt < 0)
-                {
-                    return Json("Отрицательное число", JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
-                    return Json(true, JsonRequestBehavior.AllowGet);
-                }
-            }
-            return Json("Ошибка", JsonRequestBehavior.AllowGet);
-        }
+        
     }
 }

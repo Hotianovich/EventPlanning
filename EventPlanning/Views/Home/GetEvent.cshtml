@@ -55,10 +55,15 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="seats">
-                                
-                                ccxvx
+                                <ul class="nav nav-stacked">
+                                    <li class="text-center">Осталось мест</li>
+                                    <li class="text-center">@Model.ElementAt(i).NamderOfParticipants</li>
+                                </ul>
+                            </div>
+                            <div class="my-btn">
+                                <button class="btn save-t" type="button" onclick="location.href='@Url.Action("Reg", "Home")'">Зарегистрироваться</button>
                             </div>
                         </div>
                     </div>

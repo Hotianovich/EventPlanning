@@ -14,7 +14,7 @@
             <div class="col-md-8">
                 <h1>Добавте мероприятие</h1>
                 <div class="form-event">
-                    @using (Ajax.BeginForm("AddEvent", null, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "results" }, new { @role = "form", @id = "myForm" }))
+                    @using (Ajax.BeginForm("AddEvent", new { ReturnUrl = ViewBag.ReturnUrl }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "results" }, new { @role = "form", @id = "myForm" }))
                     {
                         @Html.AntiForgeryToken()
                         <div class="form-group">

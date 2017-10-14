@@ -57,6 +57,14 @@ a:link, a:visited, a:hover, a:focus, a:active {
     font-size:16px;
 }
 
+#registerLink{
+    font-size:16px;
+}
+
+#loginLink{
+    font-size:16px;
+}
+
 .my{
     font-size:16px;
     color: #b200ff;
@@ -79,7 +87,6 @@ a:link, a:visited, a:hover, a:focus, a:active {
     font-weight: 600;
     font-size: 56px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /*text-transform:uppercase;*/
     text-align: center;
     margin-top: 110px;
 }
@@ -301,10 +308,16 @@ footer p {
     border: 1px solid #b200ff;
     font-family:"Segoe UI";
     font-size: 20px;
-    background-color: #edf1f2;
+    /*background-color: #edf1f2;*/
     color: #b200ff;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-right:10px;
-    margin-top:3px;
+    
+}
+
+.save-t {
+    margin-top:20px;
+    color:#fff;
+    background: linear-gradient(45deg, #a177ff, #02ceff);
+    border: 1px solid #32c1ff;
+    border-radius: 3px;
+    background-repeat: no-repeat;
 }
