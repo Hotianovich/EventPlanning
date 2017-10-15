@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace EventPlanning.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepositoryForReg<T> : IRepository<T>
     {
-        void Create(T t);
-        IEnumerable<T> GetAll();
-        
+        int CountReg(int t);
+        bool Get(string id, int evId);
     }
 }

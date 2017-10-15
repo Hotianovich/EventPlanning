@@ -59,11 +59,11 @@
                             <div class="seats">
                                 <ul class="nav nav-stacked">
                                     <li class="text-center">Осталось мест</li>
-                                    <li class="text-center">@Model.ElementAt(i).NamderOfParticipants</li>
+                                    <li class="text-center">@Html.Action("CountSeats", "Home", new { eventId = Model.ElementAt(i).EventId })</li>
                                 </ul>
                             </div>
                             <div class="my-btn">
-                                <button class="btn save-t" type="button" onclick="location.href='@Url.Action("ConfirmRegistration", "Account", new { eventId = Model.ElementAt(i).EventId})'">Зарегистрироваться</button>
+                                @Html.Action("DisButton", "Home", new { eventId = Model.ElementAt(i).EventId})
                             </div>
                         </div>
                     </div>

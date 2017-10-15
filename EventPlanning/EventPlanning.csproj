@@ -221,6 +221,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRepositoryForReg.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EntitiesModel\Event.cs" />
     <Compile Include="Models\EntitiesModel\RegForEvent.cs" />
@@ -401,6 +402,10 @@
     <Content Include="Views\Home\GetEvent.cshtml" />
     <Content Include="Views\Admin\AddEvent.cshtml" />
     <Content Include="Views\Account\ConfirmRegistration.cshtml" />
+    <Content Include="Views\Home\CountSeats.cshtml" />
+    <Content Include="Views\Shared\_RegistrationEnd.cshtml" />
+    <Content Include="Views\Shared\_RegPerson.cshtml" />
+    <Content Include="Views\Shared\_NoReg.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

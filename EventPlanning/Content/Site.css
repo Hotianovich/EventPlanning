@@ -50,7 +50,7 @@ a:link, a:visited, a:hover, a:focus, a:active {
 }
 
 #logoutForm a:hover{
-    color: #32c1ff;
+    color: #b200ff;
 }
 
 #logoutForm a{
@@ -59,6 +59,10 @@ a:link, a:visited, a:hover, a:focus, a:active {
 
 #registerLink{
     font-size:16px;
+}
+
+body .nav .navbar-nav .navbar-right a:hover, a:active, a:focus{
+    color: #b200ff!important;
 }
 
 #loginLink{
@@ -335,3 +339,24 @@ footer p {
     color:white;
 }
 
+.no-reg {
+    border: 1px solid #32c1ff;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    background: linear-gradient(45deg, #a177ff, #02ceff);
+    color: #fff;
+    padding-left: 7px;
+    padding-top:8px;
+    margin-top:18px;
+}
+
+.reg-end{
+    border: 1px solid #32c1ff;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    background: linear-gradient(45deg, #a177ff, #02ceff);
+    color: #fff;
+    padding-left: 15px;
+    padding-top:8px;
+    margin-top:18px;
+}
