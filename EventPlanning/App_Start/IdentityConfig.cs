@@ -19,11 +19,10 @@ namespace EventPlanning
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // настройка логина, пароля отправителя
+            // логин и пароля отправителя
             var from = "event.planning@yandex.by";
             var pass = "qwert123456";
 
-            // адрес и порт smtp-сервера, с которого мы и будем отправлять письмо
             SmtpClient client = new SmtpClient("smtp.yandex.ru", 25);
 
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -31,7 +30,6 @@ namespace EventPlanning
             client.Credentials = new System.Net.NetworkCredential(from, pass);
             client.EnableSsl = true;
 
-            // создаем письмо: message.Destination - адрес получателя
             var mail = new MailMessage(from, message.Destination);
             mail.Subject = message.Subject;
             mail.Body = message.Body;

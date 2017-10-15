@@ -406,6 +406,7 @@
     <Content Include="Views\Shared\_RegistrationEnd.cshtml" />
     <Content Include="Views\Shared\_RegPerson.cshtml" />
     <Content Include="Views\Shared\_NoReg.cshtml" />
+    <Content Include="Views\Home\NotAuthentication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

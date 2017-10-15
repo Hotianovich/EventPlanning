@@ -45,24 +45,22 @@ namespace EventPlanning.Models
 
         static void CheckRoles(ApplicationDbContext context)
         {
-            // Создаем менеджеры ролей и пользователей
+
             RoleManager<IdentityRole> roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             IdentityRole roleAdmin, roleUser = null;
             ApplicationUser userAdmin = null;
-            // поиск роли admin
+
             roleAdmin = roleManager.FindByName("admin");
             if (roleAdmin == null)
             {
-                // создаем, если не нашли
                 roleAdmin = new IdentityRole { Name = "admin" };
                 var result = roleManager.Create(roleAdmin);
             }
-            // поиск роли user
+
             roleUser = roleManager.FindByName("user");
             if (roleUser == null)
             {
-                // создаем, если на нашли
                 roleUser = new IdentityRole { Name = "user" };
                 var result = roleManager.Create(roleUser);
             }

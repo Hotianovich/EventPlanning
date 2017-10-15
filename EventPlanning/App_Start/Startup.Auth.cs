@@ -26,7 +26,7 @@ namespace EventPlanning
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Home/NotCorrectLogin"),
+                LoginPath = new PathString("/Home/NotAuthentication"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.

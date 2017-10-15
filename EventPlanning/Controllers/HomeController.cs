@@ -26,11 +26,6 @@ namespace EventPlanning.Controllers
             return View();
         }
 
-        public ActionResult NotCorrectLogin(LoginViewModel model)
-        {
-            return View(model);
-        }
-
         public PartialViewResult GetName()
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -77,7 +72,6 @@ namespace EventPlanning.Controllers
                 regEvent = _regForEvent.Get(user.Id, eventId);
             }
            
-
             if (count == 0)
             {
                 if (regEvent)
@@ -94,8 +88,16 @@ namespace EventPlanning.Controllers
             {
                 return PartialView("_NoReg");
             }
+        }
 
-           
+        public ActionResult NotCorrectLogin(LoginViewModel model)
+        {
+            return View(model);
+        }
+
+        public ActionResult NotAuthentication()
+        {
+            return View();
         }
 
     }
