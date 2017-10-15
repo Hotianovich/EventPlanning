@@ -21,5 +21,7 @@ namespace EventPlanning.Models.EntitiesModel
         [ForeignKey("UserId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
 
+        public bool RegConfirmed { get; set; }
+
     }
 }

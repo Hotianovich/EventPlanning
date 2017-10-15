@@ -50,6 +50,7 @@ namespace EventPlanning.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 kernel.Bind<IRepository<Event>>().To<EventRepository>();
+                kernel.Bind<IRepository<RegForEvent>>().To<RegForEventRepository>();
 
                 RegisterServices(kernel);
                 return kernel;

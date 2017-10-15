@@ -65,6 +65,21 @@ namespace EventPlanning.Controllers
             }
         }
 
+        //Confirm Registration
+        public async Task<ActionResult> ConfirmRegistration(int eventId)
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            var n = context.Users.Where(u => u.Email.Equals(User.Identity.Name));
+            var name = n.FirstOrDefault();
+            var code = await UserManager.GenerateEmailConfirmationTokenAsync(name.Id);
+            var callbackUrl = Url.Action("ConfirmRegistration", "Home", new { userId = name.Id, code = code, eventId = eventId }, protocol: Request.Url.Scheme);
+
+            await UserManager.SendEmailAsync(name.Id, "Подтверждение регистрации", "Для завершения регистрации перейдите по ссылке:: <a href=\""  + callbackUrl + "\">завершить регистрацию</a>");
+
+            return View();
+        }
+
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -81,11 +96,11 @@ namespace EventPlanning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("NotCorrectLogin", "Home");
             }
-
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);

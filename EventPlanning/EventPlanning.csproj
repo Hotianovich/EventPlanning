@@ -228,6 +228,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EventRepository.cs" />
+    <Compile Include="Repository\RegForEventRepository.cs" />
     <Compile Include="Services\NinjectDependencyResolver.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -241,6 +242,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Images\background1.png" />
     <Content Include="Content\Images\background2.png" />
+    <Content Include="Content\Images\background3.png" />
     <Content Include="Content\Images\Registration_Img.png" />
     <Content Include="Content\Images\SectionPageTatleImg.png" />
     <Content Include="Content\Images\wallerbackground.png" />
@@ -398,6 +400,7 @@
     <Content Include="Views\Home\GetName.cshtml" />
     <Content Include="Views\Home\GetEvent.cshtml" />
     <Content Include="Views\Admin\AddEvent.cshtml" />
+    <Content Include="Views\Account\ConfirmRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

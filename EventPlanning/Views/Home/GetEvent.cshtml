@@ -63,7 +63,7 @@
                                 </ul>
                             </div>
                             <div class="my-btn">
-                                <button class="btn save-t" type="button" onclick="location.href='@Url.Action("Reg", "Home")'">Зарегистрироваться</button>
+                                <button class="btn save-t" type="button" onclick="location.href='@Url.Action("ConfirmRegistration", "Account", new { eventId = Model.ElementAt(i).EventId})'">Зарегистрироваться</button>
                             </div>
                         </div>
                     </div>

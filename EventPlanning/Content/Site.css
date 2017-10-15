@@ -327,3 +327,11 @@ footer p {
     border-radius: 3px;
     background-repeat: no-repeat;
 }
+
+/*====== Confirm registration ====*/
+.confirm{
+    font-size:18px;
+    margin-top:110px;
+    color:white;
+}
+

@@ -1,9 +1,11 @@
 ﻿using EventPlanning.Interfaces;
 using EventPlanning.Models;
 using EventPlanning.Models.EntitiesModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,9 +14,11 @@ namespace EventPlanning.Controllers
     public class HomeController : Controller
     {
         private IRepository<Event> _repoEvent;
-        public HomeController(IRepository<Event> repoEvent)
+        private IRepository<RegForEvent> _regForEvent;
+        public HomeController(IRepository<Event> repoEvent, IRepository<RegForEvent> regForEvent)
         {
             _repoEvent = repoEvent;
+            _regForEvent = regForEvent;
         }
         public ActionResult Index()
         {
@@ -40,5 +44,18 @@ namespace EventPlanning.Controllers
             var all = _repoEvent.GetAll();
             return PartialView(all);
         }
+
+        public ActionResult ConfirmRegistration(string userId, string code, int eventId)
+        {
+            if (userId == null || code == null)
+            {
+                return View("Error");
+            }
+
+            RegForEvent regUserForEvent = new RegForEvent() { EventId = eventId, UserId = userId, RegConfirmed = true };
+            _regForEvent.Create(regUserForEvent);
+            return View("Index");
+        }
+
     }
 }

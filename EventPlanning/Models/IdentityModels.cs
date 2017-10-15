@@ -54,7 +54,7 @@ namespace EventPlanning.Models
             roleAdmin = roleManager.FindByName("admin");
             if (roleAdmin == null)
             {
-                // создаем, если на нашли
+                // создаем, если не нашли
                 roleAdmin = new IdentityRole { Name = "admin" };
                 var result = roleManager.Create(roleAdmin);
             }
