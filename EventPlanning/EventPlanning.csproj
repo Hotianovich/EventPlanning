@@ -223,6 +223,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRepositoryForReg.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AppDbInitializer.cs" />
     <Compile Include="Models\EntitiesModel\Event.cs" />
     <Compile Include="Models\EntitiesModel\RegForEvent.cs" />
     <Compile Include="Models\IdentityModels.cs" />

@@ -51,20 +51,6 @@ namespace EventPlanning.Models
             IdentityRole roleAdmin, roleUser = null;
             ApplicationUser userAdmin = null;
 
-            roleAdmin = roleManager.FindByName("admin");
-            if (roleAdmin == null)
-            {
-                roleAdmin = new IdentityRole { Name = "admin" };
-                var result = roleManager.Create(roleAdmin);
-            }
-
-            roleUser = roleManager.FindByName("user");
-            if (roleUser == null)
-            {
-                roleUser = new IdentityRole { Name = "user" };
-                var result = roleManager.Create(roleUser);
-            }
-            // поиск пользователя admin@mail.ru
             userAdmin = userManager.FindByEmail("admin@mail.ru");
             if (userAdmin == null)
             {
@@ -80,6 +66,22 @@ namespace EventPlanning.Models
                 // добавляем к роли admin
                 userManager.AddToRole(userAdmin.Id, "admin");
             }
+
+            roleAdmin = roleManager.FindByName("admin");
+            if (roleAdmin == null)
+            {
+                roleAdmin = new IdentityRole { Name = "admin" };
+                var result = roleManager.Create(roleAdmin);
+            }
+
+            roleUser = roleManager.FindByName("user");
+            if (roleUser == null)
+            {
+                roleUser = new IdentityRole { Name = "user" };
+                var result = roleManager.Create(roleUser);
+            }
+            // поиск пользователя admin@mail.ru
+           
         }
     }
 }
