@@ -20,8 +20,8 @@ namespace EventPlanning
         public Task SendAsync(IdentityMessage message)
         {
             // логин и пароля отправителя
-            var from = "event.planning@yandex.by";
-            var pass = "qwert123456";
+            var from = "dt.sup2017@yandex.by";
+            var pass = "ds[e[jkm1984";
 
             SmtpClient client = new SmtpClient("smtp.yandex.ru", 25);
 

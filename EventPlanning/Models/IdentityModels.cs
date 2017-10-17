@@ -32,7 +32,7 @@ namespace EventPlanning.Models
         public DbSet<Event> Events { get; set; }
         public DbSet<RegForEvent> RegForEvents { get; set; }
         public ApplicationDbContext()
-            : base("EventPlanningDB", throwIfV1Schema: false)
+            : base("EventPlanningDB2", throwIfV1Schema: false)
         {
         }
 
